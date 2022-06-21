@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "769256359122",
+    "project_id": "carepetsapp-511b4",
+    "storage_bucket": "carepetsapp-511b4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:769256359122:android:bb3aa45b07a81eca8e590b",
+        "android_client_info": {
+          "package_name": "com.noeliatoledanocampos.carepetsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "769256359122-8c2i6em61s91blg7kaj8tl8cdgbfot1i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.noeliatoledanocampos.carepetsapp",
+            "certificate_hash": "c58ecc04545e7f278a918ce8d34992cc3dbe8096"
+          }
+        },
+        {
+          "client_id": "769256359122-ghiqb10qvs79qcah7h8dbpa8stia5lrb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.noeliatoledanocampos.carepetsapp",
+            "certificate_hash": "635223c2d5d53d6619a06f7b460f4658c19e87a7"
+          }
+        },
+        {
+          "client_id": "769256359122-isjrnauit2316rgm8725k0renqdknl9i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.noeliatoledanocampos.carepetsapp",
+            "certificate_hash": "9a45f23945638f0a1194b655287c27d218fd2219"
+          }
+        },
+        {
+          "client_id": "769256359122-o8t9npakh4l2lq2imqe5bqfliam3e4oq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKJIAe4nsRWkVFnghbGRBpWYS4bho6_FY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "769256359122-o8t9npakh4l2lq2imqe5bqfliam3e4oq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
