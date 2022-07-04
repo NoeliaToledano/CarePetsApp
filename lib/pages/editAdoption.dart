@@ -9,10 +9,12 @@ import 'package:flutter/services.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'dart:io';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:uuid/uuid.dart';
+import 'package:image/image.dart' as Im;
 
 class EditAdoption extends StatefulWidget {
   final String adoptionId;
@@ -130,12 +132,12 @@ class _EditAdoptionState extends State<EditAdoption> {
   compressImage() async {
     final tempDir = await getTemporaryDirectory();
     final path = tempDir.path;
-    /*Im.Image? imageFile = Im.decodeImage(file?.readAsBytesSync().toList());
-    final compressedImageFile = File("$path/img_$postId.jpg")
+    Im.Image? imageFile = Im.decodeImage(file!.readAsBytesSync().toList());
+    final compressedImageFile = File('$path/img_$postId.jpg')
       ..writeAsBytesSync(Im.encodeJpg(imageFile!, quality: 85));
     setState(() {
       file = compressedImageFile;
-    });*/
+    });
   }
 
   getImageFileFromAssets() async {
@@ -370,7 +372,7 @@ class _EditAdoptionState extends State<EditAdoption> {
                       const Padding(
                         padding: EdgeInsets.only(
                             top: 30.0, bottom: 10.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "Datos de tu mascota",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
@@ -440,7 +442,7 @@ class _EditAdoptionState extends State<EditAdoption> {
                       const Padding(
                         padding: EdgeInsets.only(
                             top: 50.0, bottom: 10.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "Otros datos",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
@@ -448,7 +450,7 @@ class _EditAdoptionState extends State<EditAdoption> {
                       const Padding(
                         padding:
                             EdgeInsets.only(top: 50.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "Tipo de mascota *",
                           style: TextStyle(fontSize: 16),
                         ),
@@ -491,7 +493,7 @@ class _EditAdoptionState extends State<EditAdoption> {
                           ].map<DropdownMenuItem<String>>((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
-                              child: Text(value),
+                              child: AutoSizeText(value),
                             );
                           }).toList(),
                         ),
@@ -499,7 +501,7 @@ class _EditAdoptionState extends State<EditAdoption> {
                       const Padding(
                         padding:
                             EdgeInsets.only(top: 10.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "Sexo *",
                           style: TextStyle(fontSize: 16),
                         ),
@@ -530,7 +532,7 @@ class _EditAdoptionState extends State<EditAdoption> {
                           ].map<DropdownMenuItem<String>>((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
-                              child: Text(value),
+                              child: AutoSizeText(value),
                             );
                           }).toList(),
                         ),
@@ -538,7 +540,7 @@ class _EditAdoptionState extends State<EditAdoption> {
                       const Padding(
                         padding:
                             EdgeInsets.only(top: 10.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "¿Está tu mascota esterilizada? *",
                           style: TextStyle(fontSize: 16),
                         ),
@@ -569,7 +571,7 @@ class _EditAdoptionState extends State<EditAdoption> {
                           ].map<DropdownMenuItem<String>>((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
-                              child: Text(value),
+                              child: AutoSizeText(value),
                             );
                           }).toList(),
                         ),
@@ -577,7 +579,7 @@ class _EditAdoptionState extends State<EditAdoption> {
                       const Padding(
                         padding:
                             EdgeInsets.only(top: 10.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "¿Está tu mascota vacunada? *",
                           style: TextStyle(fontSize: 16),
                         ),
@@ -608,7 +610,7 @@ class _EditAdoptionState extends State<EditAdoption> {
                           ].map<DropdownMenuItem<String>>((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
-                              child: Text(value),
+                              child: AutoSizeText(value),
                             );
                           }).toList(),
                         ),
@@ -616,7 +618,7 @@ class _EditAdoptionState extends State<EditAdoption> {
                       const Padding(
                         padding: EdgeInsets.only(
                             top: 50.0, bottom: 10.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "Añade una breve descripción",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
@@ -639,7 +641,7 @@ class _EditAdoptionState extends State<EditAdoption> {
                       const Padding(
                         padding: EdgeInsets.only(
                             top: 50.0, bottom: 10.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "Datos de contacto",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
@@ -689,7 +691,7 @@ class _EditAdoptionState extends State<EditAdoption> {
                       const Padding(
                         padding:
                             EdgeInsets.only(top: 50.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "Provincia *",
                           style: TextStyle(fontSize: 16),
                         ),
@@ -771,7 +773,7 @@ class _EditAdoptionState extends State<EditAdoption> {
                           ].map<DropdownMenuItem<String>>((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
-                              child: Text(value),
+                              child: AutoSizeText(value),
                             );
                           }).toList(),
                         ),

@@ -5,6 +5,7 @@ import 'package:carepetsapp/pages/home.dart';
 import 'package:carepetsapp/widgets/progress.dart';
 import 'package:open_mail_app/open_mail_app.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class ViewLostPet extends StatefulWidget {
   final String lostPetId;
@@ -115,7 +116,7 @@ class _ViewLostPetState extends State<ViewLostPet> {
                         child: Column(children: [
                           Padding(
                             padding: const EdgeInsets.all(10),
-                            child: Text(
+                            child: AutoSizeText(
                               "Hola, me llamo " +
                                   lostPetResult!.name +
                                   " y estoy perdid@",
@@ -132,7 +133,7 @@ class _ViewLostPetState extends State<ViewLostPet> {
                                 bottom: 10.0,
                                 right: 20.0,
                                 left: 20.0),
-                            child: Text(
+                            child: AutoSizeText(
                               "Datos de la mascota",
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
@@ -212,7 +213,7 @@ class _ViewLostPetState extends State<ViewLostPet> {
                                   bottom: 10.0,
                                   right: 20.0,
                                   left: 20.0),
-                              child: Text(
+                              child: AutoSizeText(
                                 "Descripción",
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
@@ -220,7 +221,7 @@ class _ViewLostPetState extends State<ViewLostPet> {
                           if (description)
                             Padding(
                               padding: const EdgeInsets.all(20),
-                              child: Text(
+                              child: AutoSizeText(
                                 lostPetResult!.description + "\n\n",
                                 style: const TextStyle(
                                   color: Colors.black,
@@ -236,7 +237,7 @@ class _ViewLostPetState extends State<ViewLostPet> {
                                   bottom: 10.0,
                                   right: 20.0,
                                   left: 20.0),
-                              child: Text(
+                              child: AutoSizeText(
                                 "Número de chip",
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
@@ -244,7 +245,7 @@ class _ViewLostPetState extends State<ViewLostPet> {
                           if (lostPetResult!.numberChip != "No conocido")
                             Padding(
                               padding: const EdgeInsets.all(20),
-                              child: Text(
+                              child: AutoSizeText(
                                 lostPetResult!.numberChip + "\n\n",
                                 style: const TextStyle(
                                   color: Colors.black,
@@ -260,7 +261,7 @@ class _ViewLostPetState extends State<ViewLostPet> {
                                 bottom: 10.0,
                                 right: 20.0,
                                 left: 20.0),
-                            child: Text(
+                            child: AutoSizeText(
                               "Otros datos",
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
@@ -269,7 +270,7 @@ class _ViewLostPetState extends State<ViewLostPet> {
                             padding: const EdgeInsets.all(20),
                             child: Align(
                               alignment: Alignment.centerLeft,
-                              child: Text(
+                              child: AutoSizeText(
                                 "Esterilizado/a: " +
                                     sterilizedValue +
                                     "\n\n"
@@ -290,7 +291,7 @@ class _ViewLostPetState extends State<ViewLostPet> {
                                 bottom: 10.0,
                                 right: 20.0,
                                 left: 20.0),
-                            child: Text(
+                            child: AutoSizeText(
                               "Datos de contacto",
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
@@ -298,7 +299,7 @@ class _ViewLostPetState extends State<ViewLostPet> {
                           Padding(
                             padding: const EdgeInsets.all(20),
                             child: Align(
-                              child: Text(
+                              child: AutoSizeText(
                                 "Localización: " +
                                     lostPetResult!.location +
                                     "\n\n",

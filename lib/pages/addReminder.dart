@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carepetsapp/models/pet.dart';
 import 'package:flutter/material.dart';
 import 'package:carepetsapp/pages/home.dart';
@@ -335,7 +336,7 @@ class _AddReminderState extends State<AddReminder> {
                       const Padding(
                         padding:
                             EdgeInsets.only(top: 50.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "Tipo de recordatorio *",
                           style: TextStyle(fontSize: 16),
                         ),
@@ -376,7 +377,7 @@ class _AddReminderState extends State<AddReminder> {
                           ].map<DropdownMenuItem<String>>((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
-                              child: Text(value),
+                              child: AutoSizeText(value),
                             );
                           }).toList(),
                         ),
@@ -384,7 +385,7 @@ class _AddReminderState extends State<AddReminder> {
                       const Padding(
                         padding: EdgeInsets.only(
                             top: 50.0, bottom: 10.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "Añade una breve descripción",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
@@ -407,7 +408,7 @@ class _AddReminderState extends State<AddReminder> {
                       const Padding(
                         padding:
                             EdgeInsets.only(top: 50.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "Tipo de recordatorio *",
                           style: TextStyle(fontSize: 16),
                         ),
@@ -439,7 +440,7 @@ class _AddReminderState extends State<AddReminder> {
                           ].map<DropdownMenuItem<String>>((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
-                              child: Text(value),
+                              child: AutoSizeText(value),
                             );
                           }).toList(),
                         ),
@@ -479,7 +480,7 @@ class _AddReminderState extends State<AddReminder> {
                         const Padding(
                           padding: EdgeInsets.only(
                               top: 0.0, right: 20.0, left: 20.0),
-                          child: Text(
+                          child: AutoSizeText(
                             "Frecuencia *",
                             style: TextStyle(fontSize: 16),
                           ),
@@ -512,7 +513,7 @@ class _AddReminderState extends State<AddReminder> {
                             ].map<DropdownMenuItem<String>>((String value) {
                               return DropdownMenuItem<String>(
                                 value: value,
-                                child: Text(value),
+                                child: AutoSizeText(value),
                               );
                             }).toList(),
                           ),
@@ -521,7 +522,7 @@ class _AddReminderState extends State<AddReminder> {
                         const Padding(
                           padding: EdgeInsets.only(
                               top: 0.0, right: 20.0, left: 20.0),
-                          child: Text(
+                          child: AutoSizeText(
                             "Día de la semana *",
                             style: TextStyle(fontSize: 16),
                           ),
@@ -558,7 +559,7 @@ class _AddReminderState extends State<AddReminder> {
                             ].map<DropdownMenuItem<String>>((String value) {
                               return DropdownMenuItem<String>(
                                 value: value,
-                                child: Text(value),
+                                child: AutoSizeText(value),
                               );
                             }).toList(),
                           ),
@@ -594,7 +595,7 @@ class _AddReminderState extends State<AddReminder> {
                         const Padding(
                           padding: EdgeInsets.only(
                               top: 0.0, right: 20.0, left: 20.0),
-                          child: Text(
+                          child: AutoSizeText(
                             "Mes *",
                             style: TextStyle(fontSize: 16),
                           ),
@@ -636,7 +637,7 @@ class _AddReminderState extends State<AddReminder> {
                             ].map<DropdownMenuItem<String>>((String value) {
                               return DropdownMenuItem<String>(
                                 value: value,
-                                child: Text(value),
+                                child: AutoSizeText(value),
                               );
                             }).toList(),
                           ),

@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carepetsapp/models/user.dart';
 import 'package:carepetsapp/pages/home.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -8,6 +9,7 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:uuid/uuid.dart';
+import 'package:image/image.dart' as Im;
 
 class CreateAccount extends StatefulWidget {
   @override
@@ -85,12 +87,12 @@ class _CreateAccountState extends State<CreateAccount> {
   compressImage() async {
     final tempDir = await getTemporaryDirectory();
     final path = tempDir.path;
-    /*Im.Image? imageFile = Im.decodeImage(file?.readAsBytesSync().toList());
-    final compressedImageFile = File('$path/img_$postId.jpg')
+    Im.Image? imageFile = Im.decodeImage(file!.readAsBytesSync().toList());
+    final compressedImageFile = File('$path/img_$mediaId.jpg')
       ..writeAsBytesSync(Im.encodeJpg(imageFile!, quality: 85));
     setState(() {
       file = compressedImageFile;
-    });*/
+    });
   }
 
   getUserNames() async {
@@ -163,7 +165,7 @@ class _CreateAccountState extends State<CreateAccount> {
               children: <Widget>[
                 const Padding(
                   padding: EdgeInsets.all(30.0),
-                  child: Text(
+                  child: AutoSizeText(
                     "\"Tu mascota también necesita su propia app\"",
                     style: TextStyle(fontSize: 14.0),
                   ),
@@ -192,7 +194,7 @@ class _CreateAccountState extends State<CreateAccount> {
                     const Padding(
                       padding: EdgeInsets.only(top: 30.0),
                       child: Center(
-                        child: Text(
+                        child: AutoSizeText(
                           "Escribe el nombre completo de tu mascota",
                           style: TextStyle(fontSize: 15.0),
                         ),
@@ -236,7 +238,7 @@ class _CreateAccountState extends State<CreateAccount> {
                     const Padding(
                       padding: EdgeInsets.only(top: 15.0),
                       child: Center(
-                        child: Text(
+                        child: AutoSizeText(
                           "Escribe el apodo de tu mascota",
                           style: TextStyle(fontSize: 15.0),
                         ),
@@ -297,7 +299,7 @@ class _CreateAccountState extends State<CreateAccount> {
                           borderRadius: BorderRadius.circular(7.0),
                         ),
                         child: const Center(
-                          child: Text(
+                          child: AutoSizeText(
                             "Enviar",
                             style: TextStyle(
                                 color: Colors.white,

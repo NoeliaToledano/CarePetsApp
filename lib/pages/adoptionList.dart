@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carepetsapp/models/adoption.dart';
 import 'package:carepetsapp/pages/home.dart';
 import 'package:carepetsapp/pages/viewAdoption.dart';
@@ -188,9 +189,9 @@ class _AdoptionListState extends State<AdoptionList> {
                     length: 3,
                     child: Scaffold(
                         appBar: const TabBar(labelColor: Colors.black, tabs: [
-                          Tab(child: Text('Tipo')),
-                          Tab(child: Text('Sexo')),
-                          Tab(child: Text('Provincia'))
+                          Tab(child: AutoSizeText('Tipo')),
+                          Tab(child: AutoSizeText('Sexo')),
+                          Tab(child: AutoSizeText('Provincia'))
                         ]),
                         body: TabBarView(children: <Widget>[
                           Container(child: getFilterType()),
@@ -1165,7 +1166,7 @@ class _AdoptionListState extends State<AdoptionList> {
               if (searchResults.isEmpty)
                 const Padding(
                   padding: EdgeInsets.only(top: 250.0),
-                  child: Text("No se han encontrado resultados"),
+                  child: AutoSizeText("No se han encontrado resultados"),
                 ),
               GridView.count(
                 physics: const ScrollPhysics(),
@@ -1236,7 +1237,7 @@ class _AdoptionResultState extends State<AdoptionResult> {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(20.0),
-                  child: Text(
+                  child: AutoSizeText(
                     widget.adoption.name +
                         "\n\n" +
                         "Sexo: " +

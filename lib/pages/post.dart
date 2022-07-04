@@ -11,6 +11,7 @@ import 'package:carepetsapp/pages/activity_feed.dart';
 import 'package:carepetsapp/pages/comments.dart';
 import 'package:carepetsapp/pages/home.dart';
 import 'package:carepetsapp/widgets/progress.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class Post extends StatefulWidget {
   final String postId;
@@ -114,7 +115,7 @@ class _PostState extends State<Post> {
           ),
           title: GestureDetector(
             onTap: () => showProfile(context, profileId: user.id),
-            child: Text(
+            child: AutoSizeText(
               user.username,
               style: const TextStyle(
                 color: Colors.black,
@@ -151,7 +152,8 @@ class _PostState extends State<Post> {
       context: context,
       position: RelativeRect.fromLTRB(details.dx, details.dy, 10, 100),
       items: [
-        const PopupMenuItem<String>(child: Text('Eliminar'), value: '1'),
+        const PopupMenuItem<String>(
+            child: AutoSizeText('Eliminar'), value: '1'),
       ],
       elevation: 8.0,
     ).then((value) {
@@ -363,7 +365,7 @@ class _PostState extends State<Post> {
             ),
             /* Container(
               margin: const EdgeInsets.only(left: 30.0),
-              child: Text(
+              child: AutoSizeText(
                 "Etiquetad@: " + currentUser!.displayName,
                 style: const TextStyle(
                   color: Colors.grey,
@@ -382,7 +384,7 @@ class _PostState extends State<Post> {
               margin: const EdgeInsets.only(left: 20.0),
               child: GestureDetector(
                 onTap: () => showLikes(),
-                child: Text(
+                child: AutoSizeText(
                   "$likeCount Me gusta",
                   style: const TextStyle(
                     color: Colors.black,
@@ -401,7 +403,7 @@ class _PostState extends State<Post> {
           children: <Widget>[
             Container(
               margin: const EdgeInsets.only(left: 20.0),
-              child: Text(
+              child: AutoSizeText(
                 "$username ",
                 style: const TextStyle(
                   color: Colors.black,
@@ -409,7 +411,7 @@ class _PostState extends State<Post> {
                 ),
               ),
             ),
-            Expanded(child: Text(description)),
+            Expanded(child: AutoSizeText(description)),
             const SizedBox(
               height: 100,
             ),

@@ -10,6 +10,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:uuid/uuid.dart';
 import 'package:native_video_view/native_video_view.dart';
+import 'package:image/image.dart' as Im;
 
 class Upload extends StatefulWidget {
   final User currentUser;
@@ -129,12 +130,12 @@ class _UploadState extends State<Upload>
   compressImage() async {
     final tempDir = await getTemporaryDirectory();
     final path = tempDir.path;
-    /*Im.Image? imageFile = Im.decodeImage(file?.readAsBytesSync().toList());
+    Im.Image? imageFile = Im.decodeImage(file!.readAsBytesSync().toList());
     final compressedImageFile = File('$path/img_$postId.jpg')
       ..writeAsBytesSync(Im.encodeJpg(imageFile!, quality: 85));
     setState(() {
       file = compressedImageFile;
-    });*/
+    });
   }
 
   Future<String> uploadImage(imageFile) async {

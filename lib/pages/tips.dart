@@ -7,6 +7,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:carepetsapp/pages/home.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class Tips extends StatefulWidget {
   @override
@@ -78,7 +79,7 @@ class TipResult extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(150, 120, 150, 0),
-            child: Text(
+            child: AutoSizeText(
               tip.description,
               textAlign: TextAlign.justify,
               style: const TextStyle(

@@ -5,6 +5,7 @@ import 'package:carepetsapp/pages/home.dart';
 import 'package:carepetsapp/widgets/progress.dart';
 import 'package:open_mail_app/open_mail_app.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class ViewAdoption extends StatefulWidget {
   final String adoptionId;
@@ -115,7 +116,7 @@ class _ViewAdoptionState extends State<ViewAdoption> {
                         child: Column(children: [
                           Padding(
                             padding: const EdgeInsets.all(10),
-                            child: Text(
+                            child: AutoSizeText(
                               "Hola, me llamo " + adoptionResult!.name,
                               style: const TextStyle(
                                 color: Colors.black,
@@ -130,7 +131,7 @@ class _ViewAdoptionState extends State<ViewAdoption> {
                                 bottom: 10.0,
                                 right: 20.0,
                                 left: 20.0),
-                            child: Text(
+                            child: AutoSizeText(
                               "Datos de la mascota",
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
@@ -210,7 +211,7 @@ class _ViewAdoptionState extends State<ViewAdoption> {
                                   bottom: 10.0,
                                   right: 20.0,
                                   left: 20.0),
-                              child: Text(
+                              child: AutoSizeText(
                                 "Descripción",
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
@@ -218,7 +219,7 @@ class _ViewAdoptionState extends State<ViewAdoption> {
                           if (description)
                             Padding(
                               padding: const EdgeInsets.all(20),
-                              child: Text(
+                              child: AutoSizeText(
                                 adoptionResult!.description + "\n\n",
                                 style: const TextStyle(
                                   color: Colors.black,
@@ -233,7 +234,7 @@ class _ViewAdoptionState extends State<ViewAdoption> {
                                 bottom: 10.0,
                                 right: 20.0,
                                 left: 20.0),
-                            child: Text(
+                            child: AutoSizeText(
                               "Otros datos",
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
@@ -242,7 +243,7 @@ class _ViewAdoptionState extends State<ViewAdoption> {
                             padding: const EdgeInsets.all(20),
                             child: Align(
                               alignment: Alignment.centerLeft,
-                              child: Text(
+                              child: AutoSizeText(
                                 "Esterilizado/a: " +
                                     sterilizedValue +
                                     "\n\n"
@@ -263,7 +264,7 @@ class _ViewAdoptionState extends State<ViewAdoption> {
                                 bottom: 10.0,
                                 right: 20.0,
                                 left: 20.0),
-                            child: Text(
+                            child: AutoSizeText(
                               "Datos de contacto",
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
@@ -271,7 +272,7 @@ class _ViewAdoptionState extends State<ViewAdoption> {
                           Padding(
                             padding: const EdgeInsets.all(20),
                             child: Align(
-                              child: Text(
+                              child: AutoSizeText(
                                 "Localización: " +
                                     adoptionResult!.location +
                                     "\n\n",

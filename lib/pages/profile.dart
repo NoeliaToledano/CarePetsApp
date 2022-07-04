@@ -10,6 +10,7 @@ import 'package:carepetsapp/widgets/headerTitle.dart';
 import 'package:carepetsapp/pages/post.dart';
 import 'package:carepetsapp/pages/postTile.dart';
 import 'package:carepetsapp/widgets/progress.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class Profile extends StatefulWidget {
   final String profileId;
@@ -104,9 +105,8 @@ class _ProfileState extends State<Profile> {
           count.toString(),
           style: const TextStyle(fontSize: 22.0, fontWeight: FontWeight.bold),
         ),
-        Container(
-          margin: const EdgeInsets.only(top: 4.0),
-          child: Text(
+        Flexible(
+          child: AutoSizeText(
             label,
             style: const TextStyle(
               color: Colors.grey,
@@ -134,7 +134,7 @@ class _ProfileState extends State<Profile> {
         child: Container(
           width: 250.0,
           height: 27.0,
-          child: Text(
+          child: AutoSizeText(
             text,
             style: TextStyle(
               color: isFollowing ? Colors.black : Colors.white,
@@ -299,7 +299,7 @@ class _ProfileState extends State<Profile> {
               Container(
                 alignment: Alignment.center,
                 padding: const EdgeInsets.only(top: 12.0),
-                child: Text(
+                child: AutoSizeText(
                   user.username,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
@@ -310,7 +310,7 @@ class _ProfileState extends State<Profile> {
               Container(
                 alignment: Alignment.center,
                 padding: const EdgeInsets.only(top: 4.0),
-                child: Text(
+                child: AutoSizeText(
                   user.displayName,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
@@ -320,7 +320,7 @@ class _ProfileState extends State<Profile> {
               Container(
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(10.0),
-                child: Text(user.bio, textAlign: TextAlign.center),
+                child: AutoSizeText(user.bio, textAlign: TextAlign.center),
               ),
               Container(
                 padding: const EdgeInsets.only(top: 20.0),

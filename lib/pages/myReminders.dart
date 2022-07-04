@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:carepetsapp/pages/home.dart';
 import 'package:carepetsapp/widgets/menu.dart';
 import 'package:intl/intl.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 late List<PendingNotificationRequest> pendingNotificationRequests;
@@ -339,7 +340,7 @@ class ReminderResult extends StatelessWidget {
                         deleteReminder(context);
                       },
                       title: Center(
-                        child: Text(
+                        child: AutoSizeText(
                           reminder.reminderType,
                           style: const TextStyle(
                               fontSize: 13, fontWeight: FontWeight.bold),
@@ -374,30 +375,30 @@ class ReminderResult extends StatelessWidget {
                           ),
                         ),
                         subtitle: Center(
-                          child: Text(
+                          child: AutoSizeText(
                             formattedDate,
                           ),
                         ),
                       ),
-                      if (reminder.reminderType == "Recordatorio único")
-                  if (reminder.description == "")
-                    ListTile(
-                      onLongPress: () {
-                        deleteReminder(context);
-                      },
-                      title: Center(
-                        child: Text(
-                          reminder.reminderType,
-                          style: const TextStyle(
-                              fontSize: 13, fontWeight: FontWeight.bold),
+                  if (reminder.reminderType == "Recordatorio único")
+                    if (reminder.description == "")
+                      ListTile(
+                        onLongPress: () {
+                          deleteReminder(context);
+                        },
+                        title: Center(
+                          child: AutoSizeText(
+                            reminder.reminderType,
+                            style: const TextStyle(
+                                fontSize: 13, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        subtitle: Center(
+                          child: AutoSizeText(
+                            formattedDate,
+                          ),
                         ),
                       ),
-                      subtitle: Center(
-                        child: Text(
-                          formattedDate,
-                        ),
-                      ),
-                    ),
                 ],
               ),
             ],

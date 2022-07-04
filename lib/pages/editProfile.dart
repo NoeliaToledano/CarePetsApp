@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'dart:math';
-import 'package:carepetsapp/pages/activity_feed.dart';
 import 'package:carepetsapp/pages/comments.dart';
 import 'package:carepetsapp/pages/post.dart';
 import 'package:http/http.dart' as http;
@@ -13,6 +12,7 @@ import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:uuid/uuid.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class EditProfile extends StatefulWidget {
   final String currentUserId;
@@ -114,7 +114,7 @@ class _EditProfileState extends State<EditProfile> {
       children: <Widget>[
         const Padding(
             padding: EdgeInsets.only(top: 12.0),
-            child: Text(
+            child: AutoSizeText(
               "Nombre completo de tu mascota ",
               style: TextStyle(color: Colors.grey),
             )),
@@ -135,7 +135,7 @@ class _EditProfileState extends State<EditProfile> {
       children: <Widget>[
         const Padding(
             padding: EdgeInsets.only(top: 12.0),
-            child: Text(
+            child: AutoSizeText(
               "Escribe el apodo de tu mascota",
               style: TextStyle(color: Colors.grey),
             )),
@@ -158,7 +158,7 @@ class _EditProfileState extends State<EditProfile> {
       children: <Widget>[
         const Padding(
           padding: EdgeInsets.only(top: 12.0),
-          child: Text(
+          child: AutoSizeText(
             "Biografía",
             style: TextStyle(color: Colors.grey),
           ),

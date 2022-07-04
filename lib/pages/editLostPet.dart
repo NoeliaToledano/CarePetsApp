@@ -13,6 +13,8 @@ import 'package:geolocator/geolocator.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:uuid/uuid.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:image/image.dart' as Im;
 
 class EditLostPet extends StatefulWidget {
   final String lostPetId;
@@ -132,12 +134,12 @@ class _EditLostPetState extends State<EditLostPet> {
   compressImage() async {
     final tempDir = await getTemporaryDirectory();
     final path = tempDir.path;
-    /*Im.Image? imageFile = Im.decodeImage(file?.readAsBytesSync().toList());
-    final compressedImageFile = File("$path/img_$postId.jpg")
+    Im.Image? imageFile = Im.decodeImage(file!.readAsBytesSync().toList());
+    final compressedImageFile = File('$path/img_$postId.jpg')
       ..writeAsBytesSync(Im.encodeJpg(imageFile!, quality: 85));
     setState(() {
       file = compressedImageFile;
-    });*/
+    });
   }
 
   getImageFileFromAssets() async {
@@ -374,7 +376,7 @@ class _EditLostPetState extends State<EditLostPet> {
                       const Padding(
                         padding: EdgeInsets.only(
                             top: 30.0, bottom: 10.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "Datos de tu mascota",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
@@ -444,7 +446,7 @@ class _EditLostPetState extends State<EditLostPet> {
                       const Padding(
                         padding: EdgeInsets.only(
                             top: 50.0, bottom: 10.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "Otros datos",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
@@ -452,7 +454,7 @@ class _EditLostPetState extends State<EditLostPet> {
                       const Padding(
                         padding:
                             EdgeInsets.only(top: 50.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "Tipo de mascota *",
                           style: TextStyle(fontSize: 16),
                         ),
@@ -495,7 +497,7 @@ class _EditLostPetState extends State<EditLostPet> {
                           ].map<DropdownMenuItem<String>>((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
-                              child: Text(value),
+                              child: AutoSizeText(value),
                             );
                           }).toList(),
                         ),
@@ -503,7 +505,7 @@ class _EditLostPetState extends State<EditLostPet> {
                       const Padding(
                         padding:
                             EdgeInsets.only(top: 10.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "Sexo *",
                           style: TextStyle(fontSize: 16),
                         ),
@@ -534,7 +536,7 @@ class _EditLostPetState extends State<EditLostPet> {
                           ].map<DropdownMenuItem<String>>((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
-                              child: Text(value),
+                              child: AutoSizeText(value),
                             );
                           }).toList(),
                         ),
@@ -542,7 +544,7 @@ class _EditLostPetState extends State<EditLostPet> {
                       const Padding(
                         padding:
                             EdgeInsets.only(top: 10.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "¿Está tu mascota esterilizada? *",
                           style: TextStyle(fontSize: 16),
                         ),
@@ -573,7 +575,7 @@ class _EditLostPetState extends State<EditLostPet> {
                           ].map<DropdownMenuItem<String>>((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
-                              child: Text(value),
+                              child: AutoSizeText(value),
                             );
                           }).toList(),
                         ),
@@ -581,7 +583,7 @@ class _EditLostPetState extends State<EditLostPet> {
                       const Padding(
                         padding:
                             EdgeInsets.only(top: 10.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "¿Está tu mascota vacunada? *",
                           style: TextStyle(fontSize: 16),
                         ),
@@ -612,7 +614,7 @@ class _EditLostPetState extends State<EditLostPet> {
                           ].map<DropdownMenuItem<String>>((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
-                              child: Text(value),
+                              child: AutoSizeText(value),
                             );
                           }).toList(),
                         ),
@@ -642,7 +644,7 @@ class _EditLostPetState extends State<EditLostPet> {
                       const Padding(
                         padding: EdgeInsets.only(
                             top: 50.0, bottom: 10.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "Añade una breve descripción",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
@@ -665,7 +667,7 @@ class _EditLostPetState extends State<EditLostPet> {
                       const Padding(
                         padding: EdgeInsets.only(
                             top: 50.0, bottom: 10.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "Datos de contacto",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
@@ -715,7 +717,7 @@ class _EditLostPetState extends State<EditLostPet> {
                       const Padding(
                         padding:
                             EdgeInsets.only(top: 50.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "Provincia *",
                           style: TextStyle(fontSize: 16),
                         ),
@@ -797,7 +799,7 @@ class _EditLostPetState extends State<EditLostPet> {
                           ].map<DropdownMenuItem<String>>((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
-                              child: Text(value),
+                              child: AutoSizeText(value),
                             );
                           }).toList(),
                         ),

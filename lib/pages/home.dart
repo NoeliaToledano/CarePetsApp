@@ -160,12 +160,10 @@ class _HomeState extends State<Home> {
   }
 
   createUserInFirestore() async {
-    // 1) check if user exists in users collection in database (according to their id)
     final GoogleSignInAccount user = googleSignIn.currentUser!;
     DocumentSnapshot doc = await usersRef.doc(user.id).get();
 
     if (!doc.exists) {
-      // 2) if the user doesn't exist, then we want to take them to the create account page
       final List<String> account = await Navigator.push(
           context, MaterialPageRoute(builder: (context) => CreateAccount()));
 
@@ -173,7 +171,6 @@ class _HomeState extends State<Home> {
       final displayName = account[1];
       final mediaUrl = account[2];
 
-      // 3) get username from create account, use it to make new user document in users collection
       usersRef.doc(user.id).set({
         "id": user.id,
         "username": username.toLowerCase(),
@@ -183,7 +180,7 @@ class _HomeState extends State<Home> {
         "bio": "",
         "timestamp": DateTime.now(),
       });
-      // make new user their own follower (to include their posts in their timeline)
+
       await followersRef
           .doc(user.id)
           .collection('userFollowers')

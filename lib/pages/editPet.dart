@@ -6,6 +6,7 @@ import "package:flutter/material.dart";
 import 'package:carepetsapp/pages/home.dart';
 import 'package:carepetsapp/widgets/progress.dart';
 import 'package:flutter/services.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class EditPet extends StatefulWidget {
   final String petId;
@@ -201,7 +202,7 @@ class _EditPetState extends State<EditPet> {
                       const Padding(
                         padding: EdgeInsets.only(
                             top: 30.0, bottom: 10.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "Datos de tu mascota",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
@@ -250,7 +251,7 @@ class _EditPetState extends State<EditPet> {
                       const Padding(
                         padding: EdgeInsets.only(
                             top: 50.0, bottom: 10.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "Otros datos",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
@@ -258,7 +259,7 @@ class _EditPetState extends State<EditPet> {
                       const Padding(
                         padding:
                             EdgeInsets.only(top: 50.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "Tipo de mascota *",
                           style: TextStyle(fontSize: 16),
                         ),
@@ -301,7 +302,7 @@ class _EditPetState extends State<EditPet> {
                           ].map<DropdownMenuItem<String>>((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
-                              child: Text(value),
+                              child: AutoSizeText(value),
                             );
                           }).toList(),
                         ),
@@ -309,7 +310,7 @@ class _EditPetState extends State<EditPet> {
                       const Padding(
                         padding:
                             EdgeInsets.only(top: 10.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "Sexo *",
                           style: TextStyle(fontSize: 16),
                         ),
@@ -340,7 +341,7 @@ class _EditPetState extends State<EditPet> {
                           ].map<DropdownMenuItem<String>>((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
-                              child: Text(value),
+                              child: AutoSizeText(value),
                             );
                           }).toList(),
                         ),
@@ -348,7 +349,7 @@ class _EditPetState extends State<EditPet> {
                       const Padding(
                         padding:
                             EdgeInsets.only(top: 10.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "¿Está tu mascota esterilizada? *",
                           style: TextStyle(fontSize: 16),
                         ),
@@ -379,7 +380,7 @@ class _EditPetState extends State<EditPet> {
                           ].map<DropdownMenuItem<String>>((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
-                              child: Text(value),
+                              child: AutoSizeText(value),
                             );
                           }).toList(),
                         ),
@@ -387,7 +388,7 @@ class _EditPetState extends State<EditPet> {
                       const Padding(
                         padding:
                             EdgeInsets.only(top: 10.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "¿Está tu mascota vacunada? *",
                           style: TextStyle(fontSize: 16),
                         ),
@@ -418,7 +419,7 @@ class _EditPetState extends State<EditPet> {
                           ].map<DropdownMenuItem<String>>((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
-                              child: Text(value),
+                              child: AutoSizeText(value),
                             );
                           }).toList(),
                         ),
@@ -448,7 +449,7 @@ class _EditPetState extends State<EditPet> {
                       const Padding(
                         padding: EdgeInsets.only(
                             top: 50.0, bottom: 10.0, right: 20.0, left: 20.0),
-                        child: Text(
+                        child: AutoSizeText(
                           "Añade una breve descripción",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),

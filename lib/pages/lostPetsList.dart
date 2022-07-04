@@ -5,6 +5,7 @@ import 'package:carepetsapp/widgets/menu.dart';
 import 'package:carepetsapp/widgets/progress.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class LostPetsList extends StatefulWidget {
   @override
@@ -188,9 +189,9 @@ class _LostPetsListState extends State<LostPetsList> {
                     length: 3,
                     child: Scaffold(
                         appBar: const TabBar(labelColor: Colors.black, tabs: [
-                          Tab(child: Text('Tipo')),
-                          Tab(child: Text('Sexo')),
-                          Tab(child: Text('Provincia'))
+                          Tab(child: AutoSizeText('Tipo')),
+                          Tab(child: AutoSizeText('Sexo')),
+                          Tab(child: AutoSizeText('Provincia'))
                         ]),
                         body: TabBarView(children: <Widget>[
                           Container(child: getFilterType()),
@@ -1164,7 +1165,7 @@ class _LostPetsListState extends State<LostPetsList> {
               if (searchResults.isEmpty)
                 const Padding(
                   padding: EdgeInsets.only(top: 250.0),
-                  child: Text("No se han encontrado resultados"),
+                  child: AutoSizeText("No se han encontrado resultados"),
                 ),
               GridView.count(
                 physics: const ScrollPhysics(),
@@ -1235,7 +1236,7 @@ class _LostPetsResultState extends State<LostPetsResult> {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(20.0),
-                  child: Text(
+                  child: AutoSizeText(
                     widget.lostPet.name +
                         "\n\n" +
                         "Sexo: " +
